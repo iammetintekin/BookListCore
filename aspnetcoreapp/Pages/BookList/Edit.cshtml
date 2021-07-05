@@ -1,0 +1,58 @@
+﻿@page
+@model aspnetcoreapp.Pages.BookList.EditModel
+
+<br />
+<h2 class="text-info">
+    Edit Book
+</h2> <div class="border container pt-3">
+    <form method="post">
+        <div class="text-danger" asp-validation-summary="ModelOnly">
+
+        </div>
+        <input type="hidden"  asp-for="Book.Id"/>
+        <div class="form-group row">
+            <div class="col-3">
+                <label class=" my-2" asp-for="Book.Name"></label>
+            </div>
+            <div class="col-9">
+                <input type="text" asp-for="Book.Name" class="form-control my-2" />
+                <span asp-validation-for="Book.Name" class="text-danger"></span>
+            </div>
+
+            <div class="col-3">
+                <label class=" my-2" asp-for="Book.Author"></label>
+            </div>
+            <div class="col-9">
+                <input type="text" asp-for="Book.Author" class="form-control my-2" />
+                <span asp-validation-for="Book.Author" class="text-danger"></span>
+
+            </div>
+
+            <div class="col-3">
+                <label class=" my-2" asp-for="Book.ISBN"></label>
+            </div>
+            <div class="col-9">
+                <input type="text" asp-for="Book.ISBN" class="form-control my-2" />
+                <span asp-validation-for="Book.ISBN" class="text-danger"></span>
+            </div>
+
+        </div>
+        <div class="form-group row">
+            <div class="col-3 offset-4">
+                <input type="submit" value="Update" class="btn btn-warning form-control text-white" />
+            </div>
+            <div class="col-3">
+                <a asp-page="Index" class="btn btn-secondary text-white">Back To List</a>
+            </div>
+        </div>
+
+    </form>
+
+</div>
+
+@*//Before pushing its shows error messages*@
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
